@@ -4,14 +4,19 @@
 
 ## Install
 
-    npm install --save imgurify
+```bash
+npm install --save imgurify
+```
 
 ## Use
 
-    browserify -t imgurify entry.js
+```bash
+browserify -t imgurify entry.js
+```
 
-    var pony = require('./graphics/pony.png')
-    console.log(pony)
-    // => data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcA...
-
+```javascript
+var pony = require('./graphics/pony.png')
+console.log(pony)
+// => data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcA...
+```
 enjoy.
