@@ -1,6 +1,6 @@
 {
   "name": "imgurify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browserify tranform to turn images into base64 data uri",
   "main": "index.js",
   "scripts": {
