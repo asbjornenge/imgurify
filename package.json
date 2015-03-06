@@ -1,0 +1,26 @@
+{
+  "name": "imgurify",
+  "version": "1.0.0",
+  "description": "Browserify tranform to turn images into base64 data uri",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R nyan -w --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornenge/imgurify.git"
+  },
+  "keywords": [
+    "browserify",
+    "transform",
+    "browserify-transform",
+    "images",
+    "datauri"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/imgurify/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/imgurify"
+}
