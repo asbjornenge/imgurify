@@ -1,6 +1,8 @@
 # imgurify
 
-[Browserify](http://browserify.org/) transform that allows you to require images -> base64 data uri's.
+[Browserify](http://browserify.org/) transform that allows you to require images -> base64\* data uri's.
+
+\* base64 only for raster images, svg'a have data:image prefix, but inlined as svg+xml
 
 ## Install
 
@@ -19,4 +21,15 @@ var pony = require('./graphics/pony.png')
 console.log(pony)
 // => data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcA...
 ```
+
+## Changelog
+
+### 1.1.0
+
+* Support for svg
+
+### 1.0.0
+
+* Initial release :tada:
+
 enjoy.

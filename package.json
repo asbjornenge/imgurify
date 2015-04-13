@@ -1,10 +1,10 @@
 {
   "name": "imgurify",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Browserify tranform to turn images into base64 data uri",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R nyan -w --check-leaks"
+    "test": "mochify --transform . --watch --node"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/asbjornenge/imgurify",
   "dependencies": {
+    "js-string-escape": "^1.0.0",
     "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "mochify": "^2.7.1"
   }
 }
