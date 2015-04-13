@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/asbjornenge/imgurify",
   "dependencies": {
-    "svgo": "^0.5.1",
+    "js-string-escape": "^1.0.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {
