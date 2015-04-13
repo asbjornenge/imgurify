@@ -2,7 +2,7 @@
 
 [Browserify](http://browserify.org/) transform that allows you to require images -> base64\* data uri's.
 
-\* base64 only for raster images, svg'a have data:image prefix, but inlined as svg+xml
+\* base64 only for raster images, svgs have data:image prefix, but inlined as svg+xml, because [reasons](https://css-tricks.com/probably-dont-base64-svg/).
 
 ## Install
 
