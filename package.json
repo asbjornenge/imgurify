@@ -4,7 +4,7 @@
   "description": "Browserify tranform to turn images into base64 data uri",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R nyan -w --check-leaks"
+    "test": "mochify --transform . --watch --node"
   },
   "repository": {
     "type": "git",
