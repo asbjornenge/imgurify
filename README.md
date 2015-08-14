@@ -24,6 +24,10 @@ console.log(pony)
 
 ## Changelog
 
+### 1.2.0
+
+* Added a cli `imgurify path/to/img.svg > img.js` :heart_eyes:
+
 ### 1.1.0
 
 * Support for svg

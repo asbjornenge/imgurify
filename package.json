@@ -16,7 +16,8 @@
     "transform",
     "browserify-transform",
     "images",
-    "datauri"
+    "datauri",
+    "cli"
   ],
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
