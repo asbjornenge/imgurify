@@ -10,9 +10,10 @@ var isImg      = function(file)   {
 
 function rasterStream(file, type) {
     var i = -1
+    var tmpbuf = new Buffer('')
     return through(
-        function (buf, enc, next) { i++; this.push(rasterHead(i,type)); this.push(buf.toString('base64')); next() },
-        function (end) { this.push(rasterTail()); end() }
+        function (buf, enc, next) { i++; this.push(rasterHead(i,type)); tmpbuf = Buffer.concat([tmpbuf, buf]); next() },
+        function (end) { this.push(tmpbuf.toString('base64')); this.push(rasterTail()); end() }
     )
 }
 
