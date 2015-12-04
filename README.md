@@ -24,6 +24,10 @@ console.log(pony)
 
 ## Changelog
 
+### 1.2.2
+
+* Fixed incorrect mimetype for `jpg`
+
 ### 1.2.1
 
 * Fixed base64 encoding of large (multibuffer) raster images
