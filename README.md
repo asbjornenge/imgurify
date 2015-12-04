@@ -24,6 +24,10 @@ console.log(pony)
 
 ## Changelog
 
+### 1.2.1
+
+* Fixed base64 encoding of large (multibuffer) raster images
+
 ### 1.2.0
 
 * Added a cli `imgurify path/to/img.svg > img.js` :heart_eyes:
