@@ -18,3 +18,9 @@ it('can paser svg images', function() {
 it('produces valid base64 encoding for large files also (multiple buffers)', function() {
     assert(spinner.indexOf(spinnerRaw) >= 0)
 })
+
+it('adds the correct mimetype', function() {
+    assert(pony.indexOf('data:image/jpeg') == 0)
+    assert(thumb.indexOf('data:image/svg') == 0)
+    assert(spinner.indexOf('data:image/gif') == 0)
+})

@@ -1,11 +1,15 @@
 var through    = require('through2')
 var esc        = require('js-string-escape')
-var rasterHead = function(i,type) { return i == 0 ? 'module.exports = "data:image/'+type+';base64,' : '' }
+var rasterHead = function(i,type) { return i == 0 ? 'module.exports = "data:image/'+getMimeType(type)+';base64,' : '' }
 var svgHead    = function(i,type) { return i == 0 ? "module.exports = 'data:image/svg+xml;utf8," : '' }
 var rasterTail = function()       { return '"' }
 var svgTail    = function()       { return "'" }
 var isImg      = function(file)   {
     return (/\.((lit)?gif|png|jpg|jpeg|svg)$/).exec(file);
+}
+var getMimeType   = function(type) {
+    if (type == 'jpg') return 'jpeg'
+    return type
 }
 
 function rasterStream(file, type) {
