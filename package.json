@@ -5,7 +5,8 @@
   "main": "index.js",
   "bin": "./cli.js",
   "scripts": {
-    "test": "mochify --transform . --watch --node"
+    "test": "mochify --transform . --watch --node",
+    "testapp": "browserify testapp/app.js -t ./index.js > testapp/build.js && static testapp"
   },
   "repository": {
     "type": "git",
@@ -26,11 +27,11 @@
   },
   "homepage": "https://github.com/asbjornenge/imgurify",
   "dependencies": {
-    "js-string-escape": "^1.0.0",
     "minimist": "^1.1.3",
     "through2": "^0.6.3"
   },
   "devDependencies": {
-    "mochify": "^2.7.1"
+    "mochify": "^2.7.1",
+    "node-static": "^0.7.7"
   }
 }
