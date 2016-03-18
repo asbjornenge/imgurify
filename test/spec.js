@@ -10,7 +10,7 @@ it('can parse raster images', function() {
     assert(pony.indexOf('base64') >= 0)
 })
 
-it('can paser svg images', function() {
+it('can parse svg images', function() {
     assert(typeof thumb == 'string')
     assert(thumb.indexOf('<svg') >= 0)
 })
