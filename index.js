@@ -1,8 +1,7 @@
 var through    = require('through2')
-var esc        = require('js-string-escape')
-var rasterHead = function(i,type) { return i == 0 ? 'module.exports = "data:image/'+getMimeType(type)+';base64,' : '' }
-var svgHead    = function(i,type) { return i == 0 ? "module.exports = 'data:image/svg+xml;utf8," : '' }
-var rasterTail = function()       { return '"' }
+var rasterHead = function(i,type) { return i == 0 ? "module.exports = 'data:image/"+getMimeType(type)+";base64," : '' }
+var svgHead    = function(i,type) { return i == 0 ? "module.exports = 'data:image/svg+xml;charset=utf8," : '' }
+var rasterTail = function()       { return "'" }
 var svgTail    = function()       { return "'" }
 var isImg      = function(file)   {
     return (/\.((lit)?gif|png|jpg|jpeg|svg)$/).exec(file);
@@ -14,18 +13,39 @@ var getMimeType   = function(type) {
 
 function rasterStream(file, type) {
     var i = -1
-    var tmpbuf = new Buffer('')
+    var buffers = [] 
     return through(
-        function (buf, enc, next) { i++; this.push(rasterHead(i,type)); tmpbuf = Buffer.concat([tmpbuf, buf]); next() },
-        function (end) { this.push(tmpbuf.toString('base64')); this.push(rasterTail()); end() }
+        function (buf, enc, next) { 
+          i++; 
+          if (i == 0) { this.push(rasterHead(i,type)) } 
+          buffers.push(buf)
+          next() 
+        },
+        function (end) { 
+          var totalLength = buffers.reduce(function(length, buf) {
+            return length + buf.length
+          },0)
+          var finalBuffer = Buffer.concat(buffers, totalLength)
+          this.push(finalBuffer.toString('base64'))
+          this.push(rasterTail())
+          end() 
+        }
     )
 }
 
 function svgStream(file, type) {
     var i = -1
     return through(
-        function (buf, enc, next) { i++; this.push(svgHead(i,type)); this.push(esc(buf.toString('utf-8'))); next() },
-        function (end) { this.push(svgTail()); end() }
+        function (buf, enc, next) { 
+          i++; 
+          this.push(svgHead(i,type))
+          this.push(buf.toString('utf-8'))
+          next() 
+        },
+        function (end) { 
+          this.push(svgTail())
+          end() 
+        }
     )
 }
 
