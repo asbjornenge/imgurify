@@ -24,6 +24,11 @@ console.log(pony)
 
 ## Changelog
 
+### 2.0.0
+
+* Total rewrite
+* Reading files "manually" becuase weird browserify buffer behaviour (hoping to revert this back in the future)
+
 ### 1.2.2
 
 * Fixed incorrect mimetype for `jpg`
