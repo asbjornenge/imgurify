@@ -24,6 +24,10 @@ console.log(pony)
 
 ## Changelog
 
+### 2.0.1
+
+* Improve SVG encoding - thanks [felthy](https://github.com/felthy) :tada:
+
 ### 2.0.0
 
 * Total rewrite
